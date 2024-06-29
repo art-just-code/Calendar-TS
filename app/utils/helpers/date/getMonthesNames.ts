@@ -11,9 +11,10 @@ export const getMonthesNames = (locale: string = "default") => {
     const d = new Date();
 
     monthesNames.forEach((_, i) => {
+        //console.log("d.getDate()", d.getDate());
         const { month, monthIndex, monthShort, date } = createDate({
             locale,
-            date: new Date(d.getFullYear(), d.getMonth() + i, d.getDate()),
+            date: new Date(d.getFullYear(), d.getMonth() + i, d.getDate() > 28 ? 28 : d.getDate()), // тут была проблема, если текущая дата 29ое и больше, февраль не создавался, так как там меньше дней, решение придумал временное, предстоит еще понять, как это лучше сделать
         });
 
         monthesNames[monthIndex] = { month, monthIndex, monthShort, date };

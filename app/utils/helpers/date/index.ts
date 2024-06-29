@@ -7,3 +7,6 @@ export * from "./getMonthNumberOfDays";
 export * from "./getWeekNumber";
 export * from "./getMonthesNames";
 export * from "./getWeekDaysNames";
+export * from "./formateDate";
+export * from "./checkDateIsEqual";
+export * from "./checkIsToday";

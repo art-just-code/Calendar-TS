@@ -1,14 +1,14 @@
 "use client";
-import Image from "next/image";
-import Styles from "./page.module.css";
 import { Calendar } from "./components/Calendar/Calendar";
 import { useState } from "react";
+import { formateDate } from "./utils/helpers/date";
 
 export const Home: React.FC = () => {
-    const [selectedDate, selectDate] = useState(new Date());
+    const [selectedDate, selectDate] = useState(new Date()); // исправить имя функции на setSelectedDate
     return (
-        <main className={Styles["main"]}>
-            <section className={Styles["main__wrapper"]}>
+        <main className="main">
+            <section className="app__container">
+                <div className="date__container">{formateDate(selectedDate, "DD MM YYYY")}</div>
                 <Calendar
                     selectDate={selectDate}
                     selectedDate={selectedDate}

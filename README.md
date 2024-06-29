@@ -1,4 +1,4 @@
-# SUPSharing
+# Calendar
 
 Typescript next.js Calendar app
 
